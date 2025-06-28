@@ -1,0 +1,61 @@
+{% extends 'base/base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="my-5">
+                    <h1 class="text-center mb-4">Editar Postagem</h1>
+                    <form method="post" enctype="multipart/form-data" class="card-body">
+                        {% csrf_token %}
+
+                        <!-- Título -->
+                        <div class="form-floating mb-3">
+                            {% render_field form.titulo_postagem class="form-control" id="titulo" placeholder="Título" required="required" %}
+                            <label for="titulo">Título</label>
+                        </div>
+
+                        <!-- Conteúdo -->
+                        <div class="form-floating mb-3">
+                            {% render_field form.conteudo_postagem class="form-control" id="conteudo" placeholder="Conteúdo" style="height: 10rem" required="required" %}
+                            <label for="conteudo">Conteúdo</label>
+                        </div>
+
+                        <!-- Avaliação -->
+                        <div class="form-floating mb-3">
+                            {% render_field form.id_avalia class="form-control" id="avalia" placeholder="Avaliação" %}
+                            <label for="avalia">Avaliação</label>
+                        </div>
+
+                        <div class="d-grid">
+                            <button class="btn btn-warning text-uppercase" type="submit">Editar</button>
+                        </div>
+                    </form>
+                </div>
+                <a href="{% url 'new_post' %}" class="btn btn-warning text-uppercase">voltar</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<style>
+    .instagram-post {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+    .instagram-post .card-header {
+        background-color: white;
+        border-bottom: 1px solid #eee;
+        padding: 12px 16px;
+    }
+    .instagram-post .user-avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+</style>
+{% endblock content %}

@@ -1,0 +1,56 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<!-- Main Content -->
+<main class="mb-5">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <!-- Project Header -->
+                <div class="text-center mb-5">
+                    <h1 class="display-4 fw-bold text-primary">Social Connect</h1>
+                    <p class="lead">Uma rede social acadêmica desenvolvida com Django</p>
+                </div>
+                
+                <!-- Project Description -->
+                <div class="card shadow-sm border-0 rounded-3 mb-4">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="h4 mb-3 text-center">Sobre o Projeto</h2>
+                        <p class="mb-4">Este projeto foi desenvolvido como parte da disciplina de Programação Web, implementando os conceitos fundamentais de CRUD (Create, Read, Update, Delete) utilizando o framework Django. A aplicação simula as funcionalidades básicas de uma rede social, incluindo:</p>
+                    </div>
+                </div>
+                
+                <!-- Team Information -->
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 border-0 shadow-sm rounded-3">
+                            <div class="card-body text-center">
+                                <div class="mb-3">
+                                    <i class="fas fa-user-tie fa-3x text-primary"></i>
+                                </div>
+                                <h3 class="h5">Professor Orientador</h3>
+                                <p class="mb-1 fw-bold">Prof. Rogério Pereira de Sousa</p>
+                                <p class="text-muted small">Disciplina: Programação Web</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 border-0 shadow-sm rounded-3">
+                            <div class="card-body text-center">
+                                <div class="mb-3">
+                                    <i class="fas fa-code fa-3x text-primary"></i>
+                                </div>
+                                <h3 class="h5">Desenvolvedor</h3>
+                                <p class="mb-1 fw-bold">Danilo Bruno Moura</p>
+                                <p class="text-muted small">Projeto Acadêmico</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock content %}

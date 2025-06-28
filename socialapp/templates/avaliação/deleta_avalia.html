@@ -1,0 +1,47 @@
+{% extends 'base/base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+
+                <!-- Formulário de Mensagem -->
+                <div class="my-5">
+                    <h1 class="text-center mb-4">Nova Mensagem</h1>
+                    <form method="post" enctype="multipart/form-data" class="card-body">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <div class="d-grid">
+                            <button class="btn btn-danger text-uppercase" type="submit">Excluir</button>
+                        </div>
+                    </form>
+                </div>
+                <a href="{% url 'new_avalia' %}" class="btn btn-warning text-uppercase">voltar</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<style>
+    .instagram-post {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+
+    .instagram-post .card-header {
+        background-color: white;
+        border-bottom: 1px solid #eee;
+        padding: 12px 16px;
+    }
+
+    .instagram-post .user-avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+</style>
+{% endblock content %}

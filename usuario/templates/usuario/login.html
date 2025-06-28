@@ -1,0 +1,65 @@
+{% extends 'base/base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<!-- Main Content -->
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-8 col-lg-6 col-xl-5">
+                <div class="card shadow-sm border-0 rounded-3 my-5">
+                    <div class="card-body p-4 p-sm-5">
+                        <h2 class="card-title text-center mb-4">Login</h2>
+                        
+                        <form method="post" class="needs-validation" novalidate>
+                            {% csrf_token %}
+                            
+                            <!-- Username Field -->
+                            <div class="form-floating mb-3">
+                                {% render_field form.username class="form-control" id="floatingInput" placeholder="Nome de usuário" %}
+                                <label for="floatingInput">Numero de Matricula</label>
+                            </div>
+                            
+                            <!-- Password Field -->
+                            <div class="form-floating mb-4">
+                                {% render_field form.password class="form-control" id="floatingPassword" placeholder="Senha" %}
+                                <label for="floatingPassword">Senha</label>
+                            </div>
+                            
+                            <!-- Error Messages -->
+                            {% if form.errors %}
+                            <div class="alert alert-danger mb-4 py-2">
+                                Usuário ou senha incorretos. Por favor, tente novamente.
+                            </div>
+                            {% endif %}
+                            
+                            <!-- Submit Button -->
+                            <div class="d-grid mb-3">
+                                <button class="btn btn-primary btn-lg text-uppercase fw-bold" type="submit">
+                                    Entrar
+                                </button>
+                            </div>
+                            
+                            <!-- Additional Links -->
+                            <div class="text-center">
+                                <p class="mt-2 mb-0">Não tem conta? <a href="{% url 'new_usuario' %}">Cadastre-se</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<style>
+    .card {
+        max-width: 450px;
+        margin: 0 auto;
+    }
+    .form-control:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    }
+</style>
+{% endblock content %}
